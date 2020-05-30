@@ -26,7 +26,6 @@ exports.up = function(knex) {
           .onUpdate('CASCADE');
       })
       .createTable('project_resource', tbl => {
-        tbl.increments();
         tbl.integer('project_id', 255)
           .unsigned()
           .notNullable()
@@ -39,6 +38,9 @@ exports.up = function(knex) {
           .references('resource.id')
           .onDelete('CASCADE')
           .onUpdate('CASCADE');
+        // Composite primary key because a resource cannot be allocated to
+        // a project twice.
+        tbl.primary(['project_id', 'resource_id']);
       })
   );
 };

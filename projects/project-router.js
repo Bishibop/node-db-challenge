@@ -16,14 +16,11 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const projectData = req.body;
-
-  console.log('posting a project with data: ', projectData);
   Projects.add(projectData)
     .then(project => {
       res.status(201).json(project);
     })
-    .catch (err => {
-      console.log(err);
+    .catch(err => {
       res.status(500).json({ message: 'Failed to create new project' });
     });
 });

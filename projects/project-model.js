@@ -6,6 +6,7 @@ async function find() {
 
 async function findById(id) {
   return db('project').where({id: id}).first();
+  // add a join here for the resource names
 }
 
 async function add(projectData) {

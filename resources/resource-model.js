@@ -10,7 +10,6 @@ async function findById(id) {
 
 async function add(resource) {
   const ids = await db('resource').insert(resource);
-  console.log('adding ids: ', ids);
   return findById(ids[0]);
 }
 
