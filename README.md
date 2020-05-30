@@ -40,11 +40,24 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+A relational database stores data in sets of two dimensional tables. SQL is the
+language you use to ask the database for subsets of data.
+
 - [ ] Why do tables need a `primary key`?
+
+Tables need a primary key to identify individual rows of data so that they can
+be tracked by the database and referenced by other tables. A primary key
+is the primary tool to enforce the referential integrity of the table and
+database.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+Foreign key. Conventionally titled 'othertable_id'.
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+A bridge (or associative) table. This table contains two foreign keys, one for
+each of the ends of the many-to-many relationship.
 
 ## Minimum Viable Product
 
